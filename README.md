@@ -1,2 +1,2 @@
-# oop_tuv_project
-OOP TUV inspired vehicle technical inspection dashboard project
+# CarInspec
+CarInspec - Tool for accessing, comparing, and managing car specifications and technical information.
