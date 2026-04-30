@@ -31,7 +31,7 @@ A Java desktop application for managing vehicles and user authentication.
 ## Running the Application
 
 ```bash
-quick-start.bat
+./run-ui.bat
 ```
 
 That's it! The app will build and launch.
