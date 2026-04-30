@@ -22,11 +22,11 @@ A Java desktop application for managing vehicles and user authentication.
 
 2. **Download JavaFX SDK:**
    - Download from [https://gluonhq.com/products/javafx/](https://gluonhq.com/products/javafx/)
-   - Extract to a folder (e.g., `C:\javafx-sdk-21`)
+   - Extract to a folder (e.g., `C:\java\javafx-sdk-21`)
 
 3. **Set Environment Variable:**
    - Open Command Prompt
-   - Run: `set JAVAFX_SDK=C:\path\to\your\javafx-sdk-21`
+   - Run: `set JAVAFX_SDK=C:\javajavafx-sdk-21`
 
 ## Running the Application
 
@@ -48,11 +48,6 @@ oop_tuv_project-main/
 ├── quick-start.bat      Build and run
 └── README.md            This file
 ```
-
-## Default Test User
-
-- **Username:** `admin`
-- **Password:** `admin123`
 
 ---
 
