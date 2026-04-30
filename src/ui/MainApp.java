@@ -234,8 +234,8 @@ public class MainApp extends Application {
 		TextField tfSearchField = new TextField();
 		tfSearchField.setPromptText("Search value");
 		ChoiceBox<String> cbField = new ChoiceBox<>(
-				FXCollections.observableArrayList("numeris", "marke", "spalva", "kuras", "kategorija"));
-		cbField.setValue("numeris");
+				FXCollections.observableArrayList("Number", "Make", "Color", "Fuel", "Category"));
+		cbField.setValue("Number");
 		Button btnSearch = new Button("Search");
 		btnSearch.setOnAction(e -> {
 			String field = cbField.getValue();

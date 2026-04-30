@@ -1,54 +1,101 @@
-# CarInspec - Vehicle Management System
+# CarInspec
 
-A Java desktop application for managing vehicles and user authentication.
+**CarInspec** is a Java desktop application for managing vehicles, user accounts, and inspection records.
 
-## Features
+---
 
-- **User Login/Registration** - Create accounts and log in securely
-- **Vehicle Management** - Add, update, and manage vehicles  
-- **Search & Filter** - Find vehicles by license plate, make, color, fuel type, or category
-- **Inspection Tracking** - Track vehicle inspection dates
+## ✨ Features
 
-## Requirements
+* **User Authentication** — Register and log in securely
+* **Vehicle Management** — Add, edit, and manage vehicles
+* **Search & Filter** — Find vehicles by license plate, make, color, fuel type, or category
+* **Inspection Tracking** — Track and manage vehicle inspection dates
 
-- **Java 21+** (JDK, not JRE)
-- **JavaFX SDK 21+**
+---
 
-## Installation
+## 📦 Requirements
 
-1. **Install Java:**
-   - Download JDK 21 from [https://www.oracle.com/java/technologies/downloads/](https://www.oracle.com/java/technologies/downloads/)
-   - Install it (use default path)
+* **Java 21+** (JDK, not JRE)
+* **JavaFX SDK 21+**
 
-2. **Download JavaFX SDK:**
-   - Download from [https://gluonhq.com/products/javafx/](https://gluonhq.com/products/javafx/)
-   - Extract to a folder (e.g., `C:\java\javafx-sdk-21`)
+---
 
-3. **Set Environment Variable:**
-   - Open Command Prompt
-   - Run: `set JAVAFX_SDK=C:\javajavafx-sdk-21`
+## ⚙️ Installation
 
-## Running the Application
+### 1. Install Java (JDK 21)
 
-```bash
-./run-ui.bat
-```
+* Download from: [https://www.oracle.com/java/technologies/downloads/](https://www.oracle.com/java/technologies/downloads/)
+* Install using default settings
 
-That's it! The app will build and launch.
+---
 
-## Project Structure
+### 2. Download JavaFX SDK
+
+* Download from: [https://gluonhq.com/products/javafx/](https://gluonhq.com/products/javafx/)
+* Extract to a directory, for example:
 
 ```
-oop_tuv_project-main/
-├── src/                 Backend source code
-├── ui/                  JavaFX user interface
-├── data/                Application data storage
-├── bin/                 Compiled files (created during build)
-├── build.bat            Compile backend
-├── quick-start.bat      Build and run
-└── README.md            This file
+C:\java\javafx-sdk-21
 ```
 
 ---
 
-**Simple, clean, and ready to go!**
+### 3. Set Environment Variable
+
+Open **Command Prompt** and run:
+
+```bat
+set JAVAFX_SDK=C:\java\javafx-sdk-21
+```
+
+> 💡 Tip: For permanent usage, add `JAVAFX_SDK` as a system environment variable.
+
+---
+
+## ▶️ Running the Application
+
+Run the following command:
+
+```bash
+./run.bat
+```
+
+The application will automatically build and launch.
+
+---
+
+## 📁 Project Structure
+
+```
+oop_tuv_project-main/
+├── src/                 # Backend and UI source code
+├── data/                # Application data storage
+├── run.bat              # Build and run script
+└── README.md            # Project documentation
+```
+
+---
+
+## 🔐 Demo Credentials
+
+You can use these accounts for testing:
+
+### User
+
+* Username: `User`
+* Password: `test`
+
+### Admin
+
+* Username: `Admin`
+* Password: `test`
+
+---
+
+## 📝 Notes
+
+* Ensure Java and JavaFX are installed correctly before running the application
+* Verify that the `JAVAFX_SDK` path is correct if the app fails to start
+* Designed to be simple, clean, and easy to use
+
+---
