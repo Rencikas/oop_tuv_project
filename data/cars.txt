@@ -1,0 +1,11 @@
+ABC123,Toyota,Blue,Gasoline,Passenger,2021-03-15,2025-03-15
+XYZ789,BMW,Black,Diesel,Passenger,2020-06-20,2024-06-20
+DEF456,Volvo,White,Diesel,Truck,2019-01-10,2025-01-10
+GHI012,Tesla,Red,Electric,SUV,2022-11-05,2026-11-05
+JKL345,Scania,Gray,Diesel,Bus,2018-05-30,2024-05-30
+MNO678,Honda,Silver,Gasoline,Motorcycle,2023-02-14,2025-02-14
+PQR901,Mercedes,Blue,Diesel,Van,2021-08-22,2024-08-22
+STU234,Audi,White,Gasoline,Passenger,2022-09-11,2026-09-11
+VWX567,Ford,Black,Gasoline,SUV,2020-12-03,2024-12-03
+YZA890,Renault,Green,Diesel,Passenger,2019-04-17,2025-04-17
+LOV367,Toyota,Black,Diesel,SUV,2026-04-30,2026-04-30

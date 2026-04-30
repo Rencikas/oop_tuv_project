@@ -1,0 +1,6 @@
+Passenger 2
+Truck 1
+Bus 1
+Motorcycle 2
+SUV 2
+Van 1

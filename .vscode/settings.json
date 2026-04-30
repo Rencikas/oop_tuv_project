@@ -1,0 +1,14 @@
+{
+  "java.project.sourcePaths": ["src"],
+  "java.project.outputPath": "src",
+  "java.project.referencedLibraries": {
+    "include": [
+      "C:\\Java\\javafx-sdk-26.0.1\\lib\\*.jar"
+    ],
+    "exclude": []
+  },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java",
+    "editor.formatOnSave": true
+  }
+}
