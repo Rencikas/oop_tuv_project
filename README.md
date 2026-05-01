@@ -54,10 +54,15 @@ set JAVAFX_SDK=C:\java\javafx-sdk-21
 
 ## ▶️ Running the Application
 
-Run the following command:
+Run the following command in the project's directory:
 
+On Linux:
 ```bash
 ./run.bat
+```
+On Windows:
+```bash
+run.bat
 ```
 
 The application will automatically build and launch.
