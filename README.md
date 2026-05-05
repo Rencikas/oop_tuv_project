@@ -1,106 +1,100 @@
 # CarInspec
 
-**CarInspec** is a Java desktop application for managing vehicles, user accounts, and inspection records.
+CarInspec is a Java-based desktop application designed for managing vehicle inventories, user authentication, and technical inspection records.
 
----
+## Core Functionality
 
-## ✨ Features
+**Authentication System**
+Provides secure user registration and login with role-based access.
 
-* **User Authentication** — Register and log in securely
-* **Vehicle Management** — Add, edit, and manage vehicles
-* **Search & Filter** — Find vehicles by license plate, make, color, fuel type, or category
-* **Inspection Tracking** — Track and manage vehicle inspection dates
+**Inventory Management**
+Supports full CRUD (Create, Read, Update, Delete) operations for vehicle records.
 
----
+**Advanced Querying**
+Enables search and filtering by license plate, manufacturer, color, fuel type, and vehicle category.
 
-## 📦 Requirements
+**Compliance Tracking**
+Tracks and manages mandatory vehicle inspection schedules.
 
-* **Java 21+** (JDK, not JRE)
-* **JavaFX SDK 21+**
+## Prerequisites
 
----
+Ensure the following dependencies are installed before running the application:
 
-## ⚙️ Installation
+* **Java Development Kit (JDK):** Version 21 or higher
+* **JavaFX SDK:** Version 21 or higher
 
-### 1. Install Java (JDK 21)
+## Installation and Configuration
 
-* Download from: [https://www.oracle.com/java/technologies/downloads/](https://www.oracle.com/java/technologies/downloads/)
-* Install using default settings
+### 1. Install Java Development Kit
 
----
+Download and install JDK 21 from the official Oracle website. Ensure it is added to your system PATH.
 
-### 2. Download JavaFX SDK
+### 2. Configure JavaFX SDK
 
-* Download from: [https://gluonhq.com/products/javafx/](https://gluonhq.com/products/javafx/)
-* Extract to a directory, for example:
+Download the JavaFX SDK from Gluon and extract it to a local directory, for example:
 
 ```
 C:\java\javafx-sdk-21
 ```
 
----
+### 3. Set Environment Variables
 
-### 3. Set Environment Variable
+Define the `JAVAFX_SDK` environment variable.
 
-Open **Command Prompt** and run:
+**Windows (temporary session):**
 
-```bat
+```
 set JAVAFX_SDK=C:\java\javafx-sdk-21
 ```
 
-> 💡 Tip: For permanent usage, add `JAVAFX_SDK` as a system environment variable.
+For a persistent setup, add `JAVAFX_SDK` through the System Environment Variables in the Control Panel.
 
----
+## Execution
 
-## ▶️ Running the Application
+Navigate to the project root directory and run the initialization script.
 
-Run the following command in the project's directory:
+**Linux/macOS:**
 
-On Linux:
-```bash
+```
+chmod +x run.bat
 ./run.bat
 ```
-On Windows:
-```bash
-run.bat
+
+**Windows:**
+
+```
+.\run.bat
 ```
 
-The application will automatically build and launch.
-
----
-
-## 📁 Project Structure
+## Directory Structure
 
 ```
 oop_tuv_project-main/
-├── src/                 # Backend and UI source code
-├── data/                # Application data storage
-├── run.bat              # Build and run script
-└── README.md            # Project documentation
+├── .vscode/             # IDE configuration
+├── bin/                 # Compiled output
+├── data/                # Application data
+├── src/                 # Source code (backend and UI)
+├── .gitignore           # Git ignore rules
+├── run.bat              # Execution script
+└── README.md            # Documentation
 ```
 
----
+## Authentication Credentials
 
-## 🔐 Demo Credentials
+Pre-configured accounts for testing:
 
-You can use these accounts for testing:
-
-### User
+**Standard User**
 
 * Username: `User`
 * Password: `test`
 
-### Admin
+**Administrator**
 
 * Username: `Admin`
 * Password: `test`
 
----
+## Technical Notes
 
-## 📝 Notes
-
-* Ensure Java and JavaFX are installed correctly before running the application
-* Verify that the `JAVAFX_SDK` path is correct if the app fails to start
-* Designed to be simple, clean, and easy to use
-
----
+* **Environment Configuration:** Ensure `JAVA_HOME` and `JAVAFX_SDK` are correctly set.
+* **Runtime Issues:** If the application fails to start, verify that JavaFX modules are properly referenced in `run.bat`.
+* **Architecture:** The application follows a modular structure with a focus on maintainable backend logic and a clean user interface.
