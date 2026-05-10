@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# Cross-platform companion for run.bat — macOS / Unix shell version
-# Mirrors run.bat: verifies Java/JavaFX, builds backend, compiles UI and runs MainApp
 
 set -euo pipefail
 
@@ -13,16 +11,13 @@ if ! command -v java >/dev/null 2>&1; then
   exit 1
 fi
 
-# Resolve JavaFX path: prefer JAVAFX_SDK, then PATH_TO_FX, then try Homebrew
 if [ -n "${JAVAFX_SDK:-}" ]; then
   JAVAFX_SDK_DIR="$JAVAFX_SDK"
   PATH_TO_FX="$JAVAFX_SDK_DIR/lib"
 elif [ -n "${PATH_TO_FX:-}" ]; then
   PATH_TO_FX="$PATH_TO_FX"
 else
-  # try common Homebrew locations
   if command -v brew >/dev/null 2>&1; then
-    # try openjfx or openjdk-openjfx
     for formula in openjfx openjdk-openjfx; do
       prefix=$(brew --prefix "$formula" 2>/dev/null || true)
       if [ -n "$prefix" ]; then
@@ -50,7 +45,6 @@ fi
 
 echo "Using JavaFX SDK libs from: $PATH_TO_FX"
 
-# Ensure backend is compiled (call build.sh)
 if [ ! -d bin ] || [ -z "$(ls -A bin 2>/dev/null || true)" ]; then
   if [ -x ./build.sh ]; then
     echo "Backend not compiled or bin/ missing. Running ./build.sh"
@@ -91,7 +85,6 @@ fi
 echo
 echo "Compilation successful. Launching application..."
 
-# Copy resources (if any) so they are available on classpath at runtime
 if [ -d "src/resources" ]; then
   echo "Copying resources into bin/"
   mkdir -p bin/resources
