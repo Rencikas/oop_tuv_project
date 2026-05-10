@@ -22,8 +22,8 @@ public class FilterService {
     }
 
     public enum InspectionStatus {
-        VALID("tayra"),
-        EXPIRED("tanera");
+        VALID("valid"),
+        EXPIRED("expired");
 
         private final String value;
 
@@ -65,22 +65,52 @@ public class FilterService {
 
         String lowerValue = criterion.value.toLowerCase();
 
-        switch (criterion.field.toLowerCase()) {
+        String fieldKey = criterion.field == null ? "" : criterion.field.toLowerCase().trim();
+
+        // Accept several possible field names (English UI, Lithuanian, and some
+        // synonyms)
+        switch (fieldKey) {
+            case "number":
+            case "license":
+            case "licensenumber":
+            case "license no.":
             case "numeris":
-                return vehicle.getLicenseNumber().toLowerCase().contains(lowerValue);
+                return safeContains(vehicle.getLicenseNumber(), lowerValue);
+            case "make":
+            case "brand":
             case "marke":
-                return vehicle.getMake().toLowerCase().contains(lowerValue);
+                return safeContains(vehicle.getMake(), lowerValue);
+            case "color":
+            case "colour":
             case "spalva":
-                return vehicle.getColor().toLowerCase().contains(lowerValue);
+                return safeContains(vehicle.getColor(), lowerValue);
+            case "fuel":
+            case "fueltype":
             case "kuras":
-                return vehicle.getFuelType().toLowerCase().contains(lowerValue);
+                return safeContains(vehicle.getFuelType(), lowerValue);
+            case "category":
             case "kategorija":
-                return vehicle.getCategory().toLowerCase().contains(lowerValue);
+                return safeContains(vehicle.getCategory(), lowerValue);
+            case "inspection":
+            case "inspection status":
             case "apziura":
                 return matchesInspectionStatus(vehicle, lowerValue);
             default:
-                return false;
+                // Unknown field: try to match against license, make, color, fuel and category
+                // as a fallback
+                return safeContains(vehicle.getLicenseNumber(), lowerValue)
+                        || safeContains(vehicle.getMake(), lowerValue)
+                        || safeContains(vehicle.getColor(), lowerValue)
+                        || safeContains(vehicle.getFuelType(), lowerValue)
+                        || safeContains(vehicle.getCategory(), lowerValue);
         }
+    }
+
+    // helper: safe null-check + case-insensitive contains
+    private boolean safeContains(String haystack, String needleLower) {
+        if (haystack == null || haystack.isEmpty())
+            return false;
+        return haystack.toLowerCase().contains(needleLower);
     }
 
     private boolean matchesInspectionStatus(Vehicle vehicle, String statusValue) {

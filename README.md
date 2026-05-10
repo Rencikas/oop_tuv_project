@@ -1,100 +1,80 @@
-# CarInspec
+# CarInspec — Vehicle Inspection Manager (Java / JavaFX)
 
-CarInspec is a Java-based desktop application designed for managing vehicle inventories, user authentication, and technical inspection records.
+Description
+-----------------
+CarInspec is a Java desktop application that manages vehicle records and inspection expiry dates and provides a simple admin-managed user list. It uses plain text files in `data/` for persistence and a JavaFX UI (`src/ui/MainApp.java`).
 
-## Core Functionality
+Install from GitHub
+-------------------
+1. Clone the repository:
 
-**Authentication System**
-Provides secure user registration and login with role-based access.
-
-**Inventory Management**
-Supports full CRUD (Create, Read, Update, Delete) operations for vehicle records.
-
-**Advanced Querying**
-Enables search and filtering by license plate, manufacturer, color, fuel type, and vehicle category.
-
-**Compliance Tracking**
-Tracks and manages mandatory vehicle inspection schedules.
-
-## Prerequisites
-
-Ensure the following dependencies are installed before running the application:
-
-* **Java Development Kit (JDK):** Version 21 or higher
-* **JavaFX SDK:** Version 21 or higher
-
-## Installation and Configuration
-
-### 1. Install Java Development Kit
-
-Download and install JDK 21 from the official Oracle website. Ensure it is added to your system PATH.
-
-### 2. Configure JavaFX SDK
-
-Download the JavaFX SDK from Gluon and extract it to a local directory, for example:
-
-```
-C:\java\javafx-sdk-21
+```bash
+git clone https://github.com/Rencikas/oop_tuv_project.git
 ```
 
-### 3. Set Environment Variables
 
-Define the `JAVAFX_SDK` environment variable.
+Windows — install & run
+-----------------------
+1. Install JDK 17+ and add `java`/`javac` to PATH.
 
-**Windows (temporary session):**
 
-```
-set JAVAFX_SDK=C:\java\javafx-sdk-21
-```
+2. Download JavaFX SDK (matching your JDK) from https://gluonhq.com/products/javafx/ and extract (example path: `C:\java\javafx-sdk-26.0.1`).
 
-For a persistent setup, add `JAVAFX_SDK` through the System Environment Variables in the Control Panel.
+3. Set `JAVAFX_SDK` for the session (Command Prompt):
 
-## Execution
-
-Navigate to the project root directory and run the initialization script.
-
-**Linux/macOS:**
-
-```
-chmod +x run.bat
-./run.bat
+```bat
+set JAVAFX_SDK=C:\java\javafx-sdk-26.0.1
 ```
 
-**Windows:**
+4. Use the run.bat script to build and run:
 
-```
-.\run.bat
-```
-
-## Directory Structure
-
-```
-oop_tuv_project-main/
-├── .vscode/             # IDE configuration
-├── bin/                 # Compiled output
-├── data/                # Application data
-├── src/                 # Source code (backend and UI)
-├── .gitignore           # Git ignore rules
-├── run.bat              # Execution script
-└── README.md            # Documentation
+```bat
+run.bat
 ```
 
-## Authentication Credentials
+If you prefer manual compilation (Command Prompt):
 
-Pre-configured accounts for testing:
+```bat
+mkdir bin
+javac --module-path "%JAVAFX_SDK%\lib" --add-modules javafx.controls,javafx.fxml -d bin (for %i in (src\**\*.java) do @echo %i)
 
-**Standard User**
+java --module-path "%JAVAFX_SDK%\lib" --add-modules javafx.controls,javafx.fxml -cp bin ui.MainApp
+```
 
-* Username: `User`
-* Password: `test`
+macOS — install & run
+---------------------
+1. Install JDK 17+ (Adoptium, Azul, or Oracle). Verify:
 
-**Administrator**
+```bash
+java -version
+javac -version
+```
 
-* Username: `Admin`
-* Password: `test`
+2. Download JavaFX SDK matching your JDK and extract (example: `~/Downloads/javafx-sdk-26.0.1`).
 
-## Technical Notes
+3. Set `PATH_TO_FX` for the session (zsh/bash):
 
-* **Environment Configuration:** Ensure `JAVA_HOME` and `JAVAFX_SDK` are correctly set.
-* **Runtime Issues:** If the application fails to start, verify that JavaFX modules are properly referenced in `run.bat`.
-* **Architecture:** The application follows a modular structure with a focus on maintainable backend logic and a clean user interface.
+```bash
+export PATH_TO_FX="$HOME/Downloads/javafx-sdk-26.0.1/lib"
+```
+
+4. Use the run.sh script to build and run:
+
+```bash
+chmod +x ./run.sh
+bash ./run.sh
+```
+
+Or manual compile & run:
+
+```bash
+mkdir -p bin
+javac --module-path "$PATH_TO_FX" --add-modules javafx.controls,javafx.fxml -d bin $(find src -name "*.java")
+
+java --module-path "$PATH_TO_FX" --add-modules javafx.controls,javafx.fxml -cp bin ui.MainApp
+```
+
+Notes
+-----
+- If you see errors about `package javafx.* does not exist`, make sure the `--module-path` points to the JavaFX SDK `lib` folder and `--add-modules javafx.controls,javafx.fxml` are present.
+- The app reads/writes files in `data/`; ensure the running user has write permission.
