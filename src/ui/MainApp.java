@@ -405,6 +405,11 @@ public class MainApp extends Application {
             if (newTab != null && newTab.getContent() != null) {
                 Node content = newTab.getContent();
                 content.setOpacity(0);
+
+                if (newTab.getText().equals("Vehicle Info")) {
+                    vehicleData.setAll(vehicleService.getAllVehicles());
+                }
+                
                 FadeTransition tf = new FadeTransition(Duration.millis(300), content);
                 tf.setFromValue(0.0);
                 tf.setToValue(1.0);
