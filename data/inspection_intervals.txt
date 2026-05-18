@@ -1,6 +1,12 @@
-Passenger 2
+Sedan 2 
+SUV 2 
+Hatchback 2 
+Coupe 2 
+Convertible 2
+Pickup Truck 2 
+Van 1 
+Minivan 2 
+Wagon 2 
+Motorcycle 2 
+Bus 1    
 Truck 1
-Bus 1
-Motorcycle 2
-SUV 2
-Van 1
